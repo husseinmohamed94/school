@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Model\Student;
+use LaravelLocalization;
 class StudentController extends Controller
 {
 
@@ -37,7 +38,8 @@ class StudentController extends Controller
         'Address'       =>$request->Address
        ]);
        session()->flash('success','tag create successfuly');
-       return redirect(route('student.index'));
+       return redirect(route('student.indexcomposer require mcamara/laravel-localization
+       '));
     }
 
 

@@ -13,11 +13,13 @@
                   <table class="table"> 
                             <thead>
                             <tr> 
-                                <td>name</td>
-                                <td>email</td>
-                                <td>mobile</td>
-                                <td>Mothername</td>
-                                <td>Address</td>
+                            
+                                <td>{{__('student.name')}}</td>
+                                <td>{{__('student.email')}}</td>
+                                <td>{{__('student.mobile')}}</td>
+                                <td>{{__('student.Mothername')}}</td>
+                                <td>{{__('student.Address')}}</td>
+
                             </tr>
                             </thead>
                            <tbody>      
