@@ -13,11 +13,16 @@ return [
     |
     */
 
-    'name' => 'name',
-'email' => 'email',
-    'mobile'=>'mobile',
-    'Mothername'=>'Mothername',
-    'Address'=>'Address',
+    'name_en'                => 'name student en',
+    'name_ar'                => 'name student arbic',
+    'email'                  => 'email',
+    'mobile'                =>'mobile',
+    'Mothername_en'         =>'Mothername en',
+    'Mothername_ar'         =>'Mothername arbic',
+    'Address_ar'            =>'Address arbic',
+    'Address_en'            =>'Address eng',
+    'Delete'                => 'Delete',
+    'edit'                  =>'edit',
     
 
 ];
