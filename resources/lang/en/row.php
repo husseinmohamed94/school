@@ -12,20 +12,13 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'name'                  =>'name student'  ,         
-    'name_en'                => 'name student en',
-    'name_ar'                => 'name student arbic',
-    'email'                  => 'email',
-    'mobile'                =>'mobile',
-    'Mothername_en'         =>'Mothername en',
-    'Mothername_ar'         =>'Mothername arbic',
-    'Address_ar'            =>'Address arbic',
-    'Address'            =>'Address',
-    'Address_en'            =>'Address eng',
+    'all'                    =>'all Row',
+    'name'                   =>'name row',               
+    'name_en'                => 'row row en',
+    'name_ar'                => 'row row arbic',
     'Delete'                => 'Delete',
     'edit'                  =>'edit',
-    'Mothername'              =>'Mothername  ',
-
+    'save'                  =>'save',
     
 
 ];

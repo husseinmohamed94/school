@@ -12,17 +12,20 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'name'                       =>' اسماء الطلاب'  ,         
     'name_ar'                    => '  اسم الطالب بالعربي',
     'name_en'                    => '  اسم الطالب بالانجليزي',
     'email'                      => 'الاميل',
     'mobile'                     =>'الموبيل',
     'Mothername_ar'              =>'اسم الام بالعربي',
+    'Mothername'                 =>'اسم الام ',
     'Mothername_en'              =>' اسم الام بالانجليزي',
     'Address_en'                 =>'العنوان بالانجليزي',
     'Address_ar'                 =>'العنوان بالعربي',
     'Delete'                     => 'حذف',
-    'edit'                       =>'تعديل'
+    'edit'                       =>'تعديل',
+    'Address'                   =>'العنوان',
+
     
 
 ];

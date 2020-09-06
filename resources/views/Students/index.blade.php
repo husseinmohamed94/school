@@ -29,7 +29,7 @@
                                   <td> {{$student->email}} </td>
                                   <td> {{$student->mobile}} </td>
                                   <td> {{$student->Mothername}} </td>
-                                  <td> {{$student->Address}} </td>
+                                  <td> {{$student->adderss}} </td>
                                 <td>
                               <a href="{{route('studen.delete',$student->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('student.Delete')}}</a>
                               <a href="{{route('student.edit',$student->id)}}" class="btn btn-primary btn-sm float-right">{{__('student.edit')}}</a>

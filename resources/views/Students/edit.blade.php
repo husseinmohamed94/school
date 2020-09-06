@@ -2,7 +2,7 @@
   @section('content')
 
   <div class="container">
-  <form  action="{{route('studen.store')}}" method="POSt">
+  <form  action="{{route('studen.update',$student->id)}}" method="POSt">
   @csrf
     <div class="form-row">
 

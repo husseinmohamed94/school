@@ -53,5 +53,27 @@ Route::group(
     });
 
 
+    Route::group(['prefix'=>'Rows'],function(){
+        Route::get('/','RowsController@index')->name('Rows.index');   
+        Route::get('show/{row_id}','RowsController@show')->name('Rows.show'); 
+       Route::get('create','RowsController@create')->name('Rows.create');
+       Route::post('store','RowsController@store')->name('Rows.store');
+       Route::get('edit/{row_id}','RowsController@edit')->name('Rows.edit');
+       Route::post('update/{row_id}','RowsController@update')->name('Rows.update');
+       Route::get('delete/{row_id}','RowsController@delete')->name('Rows.delete');
+});
+
+
+
+Route::group(['prefix'=>'class'],function(){
+    Route::get('/','ClasssController@index')->name('class.index'); 
+   Route::get('create','ClasssController@create')->name('class.create');
+   Route::post('store','ClasssController@store')->name('class.store');
+   Route::get('edit/{class_id}','ClasssController@edit')->name('class.edit');
+   Route::post('update/{class_id}','ClasssController@update')->name('class.update');
+   Route::get('delete/{class_id}','ClasssController@delete')->name('class.delete');
+});
+
+
 
 });

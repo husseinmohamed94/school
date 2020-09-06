@@ -85,7 +85,7 @@ public function update(Request $request ,$student_id){
          'Address_en'      =>'required',
          ]);
 
-       $Student = Student::update([
+      /* $Student = Student::update([
         'name_ar'             =>$request->name_ar,
         'name_en'             =>$request->name_en,
         'email'               =>$request->email,
@@ -95,7 +95,9 @@ public function update(Request $request ,$student_id){
         'Address_ar'          =>$request->Address_ar,
         'Address_en'          =>$request->Address_en,
 
-       ]);
+       ]);*/
+                      $student->update($request -> all());
+
  session()->flash('success','update  successfuly');
        return redirect(route('student.index'));
 }
