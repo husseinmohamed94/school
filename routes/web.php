@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/login/custom','LoginToController@login')->name('login.custom');   
+
 
 Auth::routes();
 /*
@@ -35,6 +37,9 @@ Route::get('delete/{student_id}','StudentController@delete')->name('studen.delet
 
 
 
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::group(['middleware'=>'admin'],function(){
 
 
 Route::group(
@@ -42,6 +47,8 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
+
+        Route::get('dashboard','DashboardController@index')->name('dashboard'); 
 
         Route::group(['prefix'=>'student'],function(){
             Route::get('/','StudentController@index')->name('student.index');   
@@ -75,5 +82,14 @@ Route::group(['prefix'=>'class'],function(){
 });
 
 
+Route::group(['prefix'=>'admin'],function(){
+   
+});
+
+
+
+});
+
+});
 
 });

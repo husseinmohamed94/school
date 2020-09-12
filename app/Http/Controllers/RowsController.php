@@ -19,17 +19,27 @@ class RowsController extends Controller
             }
 
          public function show($class_id){
-                //return     $rows = Classes::find($class_id);
-              //   $classes = Classes::whereHas('name_'.LaravelLocalization::getCurrentLocale().' as name')->get();
-       $rows =  Row::find($class_id);
+              $classes = Row::with(['classes'=>function($q){
+      // $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
+       }])->find($class_id);
+   
+         /*   $classes = Row::with(['classes' => function($q){
+            $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
+         }])->find($class_id);
+
+         return $classes;*/
+//   $classes = Classes::select('name_'.LaravelLocalization::getCurrentLocale())->get();
+ /* return   $rows =  Row::with(['classes'=>function($q){
+           $q->select('id');
+       }])->find($class_id);*/
       // $rows =    Row::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get()->find($class_id);
 
       //   $classes =  Classes::find($class_id);
 
-          $classes = Classes::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get();
-          $classes = $rows->classes;
+    //    $classes = Classes::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get();
+     //    $classes = $rows->classes;
     
-   return view('Rows.show',compact('classes'));
+  return view('Rows.show',compact('classes'));
 
 }
 

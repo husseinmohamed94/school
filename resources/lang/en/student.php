@@ -12,6 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'student'               =>'students',
     'name'                  =>'name student'  ,         
     'name_en'                => 'name student en',
     'name_ar'                => 'name student arbic',

@@ -15,11 +15,15 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-           $table->string('name');
+           $table->string('name_ar');
+           $table->string('name_en');
+
            $table->string('email')->unique();
            $table->string('mobile');
-           $table->string('Mothername');
-           $table->string('Address');
+           $table->string('Mothername_ar');    
+          $table->string('Mothername_en');
+          $table->string('Address_ar');
+           $table->string('Address_en');
            //$table->>enum('Gender',['Male','female'])->default('male');
         $table->timestamps();
         });

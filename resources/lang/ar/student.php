@@ -12,6 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'student'                    => 'الطلاب',
     'name'                       =>' اسماء الطلاب'  ,         
     'name_ar'                    => '  اسم الطالب بالعربي',
     'name_en'                    => '  اسم الطالب بالانجليزي',

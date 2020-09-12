@@ -5,7 +5,7 @@
         <a href="{{route('class.create')}}" class="btn btn-success float-right">Add class</a>
         </div>
 
-        <div class="card card-default">
+        <div class="card card-default text-center">
             <div class="card-header">{{__('row.all')}}</div>
               <div class="card-body">
                   @if(count($classes) > 0 )
@@ -14,17 +14,17 @@
                             <thead>
                             <tr> 
                             
-                                <td>{{__('row.name')}}</td>
-                                <td>الصف</td>
+                                <td>اسم الفصل</td>
+                             
 
                             </tr>
                             </thead>
                            <tbody>      
                            @foreach($classes as $class) 
-                           @foreach($rows as $row)
+                        
                               <tr>
                                   <td> {{$class->name}} </td>
-                                  <td >{{$row->name}}</td>
+                                 
                                   
                                 <td>
 
@@ -33,7 +33,7 @@
                             </td>
                             </tr>
                             @endforeach
-                        @endforeach
+                      
                       
                       </tbody>
                   </table>
