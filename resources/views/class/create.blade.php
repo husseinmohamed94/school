@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('dashboard.app')
 @section('content')
 
 <div class="container">
@@ -7,7 +7,7 @@
   <div class="form-row">
   
     <div class="col-md-6 mb-3">
-      <label for="validationDefault01"> {{__('row.name_ar')}}</label>
+      <label for="validationDefault01"> {{__('class.name_ar')}}</label>
       <input type="text" name="name_ar" class="form-control" >
       @error('name_ar')
     <div class="alert alert-danger">{{ $message }}</div>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-md-6 mb-3">
-      <label for="validationDefault01"> {{__('row.name_en')}}</label>
+      <label for="validationDefault01"> {{__('class.name_en')}}</label>
       <input type="text" name="name_en" class="form-control" >
       @error('name_en')
     <div class="alert alert-danger">{{ $message }}</div>

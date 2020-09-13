@@ -1,3 +1,17 @@
+
 .meun{
-    margin-top: -24px;
-    margin-left: -33px;
+    margin-left: -113px;
+
+    margin-top: -21px;
+    
+}
+.meun ul{
+    border-radius: 10px;
+}
+
+.cont{
+}
+.dropdown-menu {
+    border-radius: 10px;
+}
+

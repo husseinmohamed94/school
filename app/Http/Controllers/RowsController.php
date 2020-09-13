@@ -9,21 +9,18 @@ use LaravelLocalization;
 class RowsController extends Controller
 {
          public function index(){
-          //$Student= Student::all();
-               // return view('students.index')->with('students',Student::all());
-            //  'name_'.LaravelLocalization::getCurrentLocale().' as name',
-        
+          
                  $rows =    Row::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get();
                 return view('Rows.index',compact('rows'));
         
             }
 
          public function show($class_id){
-              $classes = Row::with(['classes'=>function($q){
-      // $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
+        /*  $classes = Row::with(['classes'=>function($q){
+       $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
        }])->find($class_id);
    
-         /*   $classes = Row::with(['classes' => function($q){
+          $classes = Row::with(['classes' => function($q){
             $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
          }])->find($class_id);
 
@@ -34,12 +31,17 @@ class RowsController extends Controller
        }])->find($class_id);*/
       // $rows =    Row::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get()->find($class_id);
 
-      //   $classes =  Classes::find($class_id);
+/*return   $classes =  Row::with(['classes'=>function($q){
 
+     $q->select('id','name_'.LaravelLocalization::getCurrentLocale().' as name');
+      }])->find($class_id);
+*/
+   $row = Row::find($class_id);
     //    $classes = Classes::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name')->get();
      //    $classes = $rows->classes;
-    
-  return view('Rows.show',compact('classes'));
+    $classes = $row->classes;
+
+return view('Rows.show',compact('classes'));
 
 }
 

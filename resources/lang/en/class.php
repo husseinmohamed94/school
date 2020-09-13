@@ -12,11 +12,13 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'row'                   =>'row',
-    'all'                    =>'all Row',
-    'name'                   =>'name row',               
-    'name_en'                => 'row row en',
-    'name_ar'                => 'row row arbic',
+    'class'                  =>'class',
+       
+    'all'                    =>'all class',
+    'add-class'               =>'add class',
+    'name'                   =>'name class',               
+    'name_en'                => 'row clas en',
+    'name_ar'                => 'row class arbic',
     'Delete'                => 'Delete',
     'edit'                  =>'edit',
     'save'                  =>'save',

@@ -37,9 +37,9 @@ Route::get('delete/{student_id}','StudentController@delete')->name('studen.delet
 
 
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>['auth','admin']],function(){
 
-    Route::group(['middleware'=>'admin'],function(){
+    //Route::group(['middleware'=>'admin'],function(){
 
 
 Route::group(
@@ -50,6 +50,7 @@ Route::group(
 
         Route::get('dashboard','DashboardController@index')->name('dashboard'); 
 
+        /**************** start route student */
         Route::group(['prefix'=>'student'],function(){
             Route::get('/','StudentController@index')->name('student.index');   
            Route::get('create','StudentController@create')->name('student.create');
@@ -59,6 +60,9 @@ Route::group(
            Route::get('delete/{student_id}','StudentController@delete')->name('studen.delete');
     });
 
+        /**************** end route student */
+
+                /**************** start route row */
 
     Route::group(['prefix'=>'Rows'],function(){
         Route::get('/','RowsController@index')->name('Rows.index');   
@@ -71,6 +75,8 @@ Route::group(
 });
 
 
+        /**************** end route student */
+        /**************** start route classs */
 
 Route::group(['prefix'=>'class'],function(){
     Route::get('/','ClasssController@index')->name('class.index'); 
@@ -80,15 +86,24 @@ Route::group(['prefix'=>'class'],function(){
    Route::post('update/{class_id}','ClasssController@update')->name('class.update');
    Route::get('delete/{class_id}','ClasssController@delete')->name('class.delete');
 });
-
-
-Route::group(['prefix'=>'admin'],function(){
-   
-});
+      
+/**************** start route class */
 
 
 
-});
+        /**************** start route slider */
+
+        Route::group(['prefix'=>'slider'],function(){
+            Route::get('/','SliderShowController@index')->name('slider.index'); 
+           Route::get('create','SliderShowController@create')->name('slider.create');
+           Route::post('store','SliderShowController@store')->name('slider.store');
+        
+        });
+              
+        /**************** start route class */
+        
+        
+
 
 });
 

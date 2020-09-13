@@ -12,11 +12,14 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'row'                        =>'الصفوف',   
-    'all'                        =>'اسم الصفوف',
-    'name'                       =>'اسم الصف',
-    'name_ar'                    => '  اسم الصف بالعربي',
-    'name_en'                    => '  اسم الصف بالانجليزي',
+    'class'                      =>'الفصول',   
+    'name'                   =>'اسم الفصل',
+
+    'all'                        =>'اسم الفصول',
+    'add-class'                  =>'اضافه فصل',
+    'name'                       =>'اسم الفصل',
+    'name_ar'                    => '  اسم الفصل بالعربي',
+    'name_en'                    => '  اسم الفصل بالانجليزي',
     'Delete'                     => 'حذف',
     'edit'                       =>'تعديل',
     'save'                       =>'حفظ'
