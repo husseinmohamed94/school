@@ -1,79 +1,81 @@
 @extends('dashboard.app')
 @section('content')
-  <div class="container-fluid"> 
-      <div class="row">
-            <div class="col-lg-9"> 
-                    <div class="clearfix ">
-                    <a href="{{route('Rows.create')}}" class="btn btn-success float-right">Add studen</a>
-                    </div>
-                  <div class="card card-default">
-                        <div class="card-header">{{__('row.all')}}</div>
-                             <div class="card-body">
-                                  @if(count($sliders) > 0 )
-                                  <table class="table"> 
-                                            <thead>
-                                            <tr> 
-                                                <td>{{__('row.name')}}</td>
-                                            </tr>
-                                            </thead>
-                                          <tbody>      
-                                              @foreach($sliders as $slider) 
-                                                  <tr>
-                                                      <td><img src="{{asset('/imgase/slider/'.$slider->name)}}" alt=""  style="width: 85px;height: 60px;"> </td>                                
-                                                    <td>
-                                                  <a href="{{route('Rows.delete',$slider->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
-                                                  <a href="{{route('Rows.edit',$slider->id)}}" class="btn btn-primary btn-sm float-right">{{__('row.edit')}}</a>
-                                                  <a href="{{route('Rows.show',$slider->id)}}" class="btn btn-success">عرض الفصول</a>
-                                                </td>
-                                                </tr>
-                                            @endforeach          
-                                          </tbody>
-                                  </table>
-                                    @else
-                                    <div class="text-center"> NO Student</div>
-                                    @endif  
-                              </div>    
-
-                  
-                    </div>
-                    
-                    </div>
-
-
-                    </div>
+    <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-lg-12">
+                @if(Session::has('success'))
+                           <div class="alert alert-warning alert-success fade show text-center"  role="alert">
+                              <strong> {{Session::get('success')}}</strong>   
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                @endif
 
 
 
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-  @foreach($sliders as $slider)
-@if($sliders = 1)
-    <div class="carousel-item active">
-      <img src="{{asset('/imgase/slider/'.$slider->name)}}" class="d-block w-100" alt="...">
-    </div>
-   @else
-    <div class="carousel-item">
-      <img src="{{asset('/imgase/slider/'.$slider->name)}}" class="d-block w-100" alt="...">
-    </div>
-   
-  </div>
-  @endif
-  @endforeach
+                <table class="table table-striped table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">photo</th>
+                            <th scope="col">name</th>
+                            <th scope="col">email</th>
+                            <th scope="col">mobile</th>
+                            <th scope="col">University</th>
+                            <th scope="col">qualification</th>
+                            <th scope="col">Customization</th>
+                            <th scope="col">GraduationYear</th>
+                            <th scope="col">Gender</th>
+                            <th scope="">control</th>
 
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+                          </tr>
+                        </thead>
+                        @foreach($teachers as $teacher)
+                          <tbody>
+                          
+                            <tr>
+                              <th scope="row">{{$teacher->id}}</th>
+                              <td><img src="{{asset('/imgase/teacher/'. $teacher->photo)}}"  class="d-block w-50" alt=""></td>
+                              <td>{{$teacher->name}}</td>
+                              <td>{{$teacher->email}}</td>
+                              <td>{{$teacher->mobile}}</td>
+                              <td>{{$teacher->University}}</td>
+                              <td>{{$teacher->qualification}}</td>
+                              <td>{{$teacher->Customization}}</td>
+                              <td>{{$teacher->GraduationYear}}</td>
+                              <td>{{$teacher->Gender}}</td>
+                              <td>
+                              <a href="{{route('studen.delete',$teacher->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                              <a href="{{route('studen.delete',$teacher->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a>
+                              </td>
+
+                             
+
+                            </tr>
+                            @endforeach
+
+                         </tbody>
+
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>   
+            </div>
+     </div>
 
 
 @endsection

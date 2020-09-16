@@ -17,6 +17,8 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('name_ar');
             $table->string('name_en');
+            $table->string('email')->unique();
+            $table->string('mobile');
             $table->string('University_ar');
             $table->string('University_en');
             $table->string('qualification_ar');

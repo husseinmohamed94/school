@@ -10,7 +10,7 @@ class StudentController extends Controller
 
     public function index(){
 //$Student= Student::all();
-         view('students.index')->with('students',Student::all());
+        // view('students.index')->with('students',Student::all());
     //  'name_'.LaravelLocalization::getCurrentLocale().' as name',
 
          $students = Student::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name','email','mobile',

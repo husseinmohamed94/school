@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Teacher;
 use App\Traits\photoTrait;
+use LaravelLocalization;
+
 use  App\Http\Requests\TeacherRequest;
 class TeacherController extends Controller
 {    use photoTrait;
+
+  public function index()
+    {
+      $teachers = Teacher::select('id','name_'.LaravelLocalization::getCurrentLocale().' as name','email','mobile','University_'.LaravelLocalization::getCurrentLocale().' as University',
+      'qualification_'.LaravelLocalization::getCurrentLocale().' as qualification','Customization_'.LaravelLocalization::getCurrentLocale().' as Customization','GraduationYear','Gender','photo')->get();
+       
+      
+       return view('Teacher.index',compact('teachers'));
+    }
 
     public function create()
     {
@@ -17,25 +28,15 @@ class TeacherController extends Controller
    
     public function store(TeacherRequest $request)
     {
-       /* $request->validate([
-            'name_ar'                       =>'required',
-            'name_en'                      =>'required',
-            'University_ar'                =>'required',
-            'University_en'                =>'required',
-            'qualification_ar'             => 'required',
-            'qualification_en'             => 'required',
-            'Customization_ar'            =>'required',
-            'Customization_en'            =>'required',
-            'GraduationYear'              =>'date',
-            'Gender'                      =>'required',
-            'photo'                      =>'required|image'
-            ]);*/
+       
 
 
-        $filephoto=$this->saveIamage($request->photo,'imgase/slider');
+        $filephoto=$this->saveIamage($request->photo,'imgase/teacher');
       $teacher = Teacher::create([
         'name_ar'                        =>$request->name_ar,
         'name_en' 	                     =>$request->name_en,
+        'email'                          =>$request->email,
+        'mobile'                         =>$request->mobile,
         'University_ar'                  => $request->University_ar,
         'University_en'                  => $request->University_en,
         'qualification_ar'               =>$request->qualification_ar,
@@ -47,8 +48,9 @@ class TeacherController extends Controller
         'photo'                          => $filephoto,
     
       ]);
-      session()->flash('success','tag create successfuly');
-      return redirect(route('student.index'));
+      session()->flash('success',' create  techer successfuly');
+      return redirect(route('teacher.index'));
+   // return redirect()->back();
     }
 
 

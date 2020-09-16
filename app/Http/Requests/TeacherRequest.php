@@ -26,6 +26,8 @@ class TeacherRequest extends FormRequest
         return [
         'name_ar'                       =>'required',
          'name_en'                      =>'required',
+         'mobile'                       =>'required|numeric',
+         'email'                        =>'email|required|unique:teachers',       
          'University_ar'                =>'required',
          'University_en'                =>'required',
          'qualification_ar'             => 'required',
@@ -34,7 +36,17 @@ class TeacherRequest extends FormRequest
          'Customization_en'            =>'required',
          'GraduationYear'              =>'date',
          'Gender'                      =>'required',
-         'photo'                      =>'required|image'
+         'photo'                      =>'image'
         ];
+
+    }
+
+        public  function messages()
+        {
+            return [
+             
+              'email.unique'=> __('The email has already'),
+            ];
+               
     }
 }

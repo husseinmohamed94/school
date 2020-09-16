@@ -101,10 +101,10 @@ Route::group(['prefix'=>'class'],function(){
               
         /**************** start route class */
         
-         Route::group(['prefix'=>'Teacher'],function(){
-            Route::get('/','TeacherController@index')->name('Teacher.index'); 
-           Route::get('create','TeacherController@create')->name('Teacher.create');
-           Route::post('store','TeacherController@store')->name('Teacher.store');
+         Route::group(['prefix'=>'teacher'],function(){
+            Route::get('/','TeacherController@index')->name('teacher.index'); 
+           Route::get('create','TeacherController@create')->name('teacher.create');
+           Route::post('store','TeacherController@store')->name('teacher.store');
         
         });
    
