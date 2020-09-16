@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/login/custom','LoginToController@login')->name('login.custom');   
@@ -102,7 +101,13 @@ Route::group(['prefix'=>'class'],function(){
               
         /**************** start route class */
         
+         Route::group(['prefix'=>'Teacher'],function(){
+            Route::get('/','TeacherController@index')->name('Teacher.index'); 
+           Route::get('create','TeacherController@create')->name('Teacher.create');
+           Route::post('store','TeacherController@store')->name('Teacher.store');
         
+        });
+   
 
 
 });

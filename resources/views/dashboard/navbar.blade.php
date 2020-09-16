@@ -1,90 +1,100 @@
-@extends('dashboard.app')
-@section('content')
-
-        <div class="container-fluid meun" >
-            <ul class="nav flex-column bg-dark w-50">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                </ul>
-        </div>
-
-   
-@endsection
 
 
+                         <div class="meun w-25" >
+                                                <ul class="nav flex-column bg-dark">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="{{route('student.index')}}">{{__('student.student')}}</a>
+                                                        
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('class.index')}}">{{__('class.class')}}</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('Rows.index')}}">{{__('row.row')}}</a>
+                                                    </li>
+                                                   
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('student.index')}}">Link</a>
+                                                    </li>
+
+                                                    <li class="nav-item dropdown">
+                                                        <ul>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu w-100 bg-dark">
+                   <li> <a class="dropdown-item" href="#">Action</a></li>
+                 <li>   <a class="dropdown-item" href="#">Another action</a></li>
+</li>    <a class="dropdown-item" href="#">Something else here</a></li>
+                    
+                    </div>
+</ul>
+  </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Link</a>
+                                                    </li>
+
+                                                    
+                                                    </ul>
+                               </div> 
+                       
+                      
 
 
 
 
 
 
-<nav class="navbar info-nav text-center  navbar-light main_navigation ">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse info-div-nav navbar-collapse " id="navbarNavDropdown">
-        <div class="employee_info">
-        <div class="profile_picture">
-            <img class="" src="/mvcapp/public/img/user.png" alt="User Profile Picture"/>
-
-        </div>
 
 
-            <span class="name">udrr </span>
-            <span class="privilege">group</span>
-        </div>
-
-        <ul class="navbar-nav list-unstyled text-right  app_navigation">
-           
-            <li class="nav-item dropdown">
-                <a class="nav-link " href="/mvcapp/public/index.php/store" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">store </i>  <?= $text_store ?>
-                </a>
-                <div class="dropdown-menu info-dropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/mvcapp/public/index.php/productcategories">categories</a>
-                    <a class="dropdown-item" href="/mvcapp/public/index.php/productlist"><products</a>
-                </div>
-            </li>
-            <li> <a href="/mvcapp/public/index.php/clients"><i class="material-icons">contacts </i></a></li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">store </i> hbffffgggg
-                </a>
-                <div class="dropdown-menu info-dropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/mvcapp/public/index.php/users">user</a>
-                    <a class="dropdown-item" href="/mvcapp/public/index.php/usersgroups">yese2 </a>
-                    <a class="dropdown-item" href="/mvcapp/public/index.php/privileges">hgg </a>
-                </div>
-            </li>
-
-            <li> <a href="/mvcapp/public/index.php/reports "><i class="fa fa-bar-chart"> </a></li>
-          
-
-        </ul>
 
 
+
+                               <!--
+                                   
+
+<nav class="navbar info-nav text-center  navbar-light main_navigation  w-25">
+
+<button class="navbar-toggler meun" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse info-div-nav navbar-collapse " id="navbarNavDropdown">
+                        
+                                                <ul class="nav flex-column bg-dark">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="{{route('student.index')}}">{{__('student.student')}}</a>
+                                                        
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('class.index')}}">{{__('class.class')}}</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('Rows.index')}}">{{__('row.row')}}</a>
+                                                    </li>
+                                                   
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{route('student.index')}}">Link</a>
+                                                    </li>
+                                                   <ul>
+                                                   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+     
     </div>
+    
+  </li>
+ 
+</ul>
+<li class="nav-item">
+                                                        <a class="nav-link" href="{{route('student.index')}}">Link</a>
+                                                    </li>
+                                                    </ul>
 
-</nav>
+                                                 
+                               </div> 
+                       
+                      
+
+-->

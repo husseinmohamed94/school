@@ -1,6 +1,8 @@
 @extends('dashboard.app')
 @section('content')
-  <div class="container"> 
+  <div class="container-fluid"> 
+  <div class="row">
+            <div class="col-lg-12">  
         <div class="clearfix ">
         <a href="{{route('class.create')}}" class="btn btn-success float-right">{{__('class.add-class')}}</a>
         </div>
@@ -40,6 +42,8 @@
                     @endif
                       
              </div>    
+        </div>
+        </div>
         </div>
         </div>
 @endsection
