@@ -1,4 +1,6 @@
   @extends('dashboard.app')
+  @section('title','slider Edit')
+
   @section('content')
 
   <div class="container">

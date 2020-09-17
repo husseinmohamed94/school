@@ -30,14 +30,22 @@ class SliderShowController extends Controller
  
 
     public function store(Request $request){
+            $request->validate([
+                'photo' => 'required|image',
+                'title' =>'nullable',
+                'details' =>'nullable',
+                
+                ]);
 
-        $file_name = $this->saveIamage($request->name,'imgase/slider');
-
-        
-    
+        $file_name = $this->saveIamage($request->photo,'imgase/slider');
         $slider= SliderShow::create([
-            'name'=>$file_name,
+            'photo'=>$file_name,
+            'title' =>$request->title,
+            'details'=>$request->details
         ]);
+
+        session()->flash('success','create add success') ;
+        return redirect()->back();
 
     }
 

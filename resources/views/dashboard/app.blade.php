@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>@yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -46,6 +46,18 @@
                 <li class="nav-item d-none d-sm-inline-block">
                   <a href="index3.html" class="nav-link">Home</a>
                 </li>
+                <ul class="navbar-nav mr-auto">
+
+@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+    <li>
+        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+            {{ $properties['native'] }}
+        </a>
+    </li>
+@endforeach
+
+</ul>
+
                 <li class="nav-item d-none d-sm-inline-block">
                   <a href="#" class="nav-link">Contact</a>
                 </li>
@@ -123,7 +135,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">@yield('title')</span>
     </a>
 
     <!-- Sidebar -->
@@ -178,7 +190,78 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('teacher.index')}}" class="nav-link"> 
+             
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+              {{__('teacher.teacher')}}
+              </p>
+            </a>
+          </li>
 
+          <li class="nav-item">
+            <a href="{{route('slider.index')}}" class="nav-link"> 
+             
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+              {{__('slider.slider')}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-tree"></i>
+              <p>
+                UI Elements
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>General</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Icons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Buttons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/modals.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Modals & Alerts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/navbar.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Navbar & Tabs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/timeline.html" class="nav-link">
+                  <p>Timeline</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
           
 
           <li class="nav-header">Action</li>

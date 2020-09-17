@@ -1,10 +1,12 @@
 @extends('dashboard.app')
+@section('title','slider')
+
 @section('content')
   <div class="container-fluid"> 
       <div class="row">
             <div class="col-lg-9"> 
                     <div class="clearfix ">
-                    <a href="{{route('Rows.create')}}" class="btn btn-success float-right">Add studen</a>
+                    <a href="{{route('slider.create')}}" class="btn btn-success float-right">Add studen</a>
                     </div>
                   <div class="card card-default">
                         <div class="card-header">{{__('row.all')}}</div>
@@ -13,24 +15,28 @@
                                   <table class="table"> 
                                             <thead>
                                             <tr> 
-                                                <td>{{__('row.name')}}</td>
+                                                <td>{{__('slider.photo')}}</td>
+                                                <td>{{__('slider.title')}}</td>
+                                                <td>{{__('slider.details')}}</td>
                                             </tr>
                                             </thead>
                                           <tbody>      
                                               @foreach($sliders as $slider) 
                                                   <tr>
-                                                      <td><img src="{{asset('/imgase/slider/'.$slider->name)}}" alt=""  style="width: 85px;height: 60px;"> </td>                                
-                                                    <td>
+                                                      <td><img src="{{asset('/imgase/slider/'.$slider->photo)}}" alt=""  style="width: 85px;height: 60px;"> </td>                                
+                                                      <td>{{$slider->title}} </td>                                
+                                                      <td> {{$slider->details}}</td>                                
+
+                                                      <td>
                                                   <a href="{{route('Rows.delete',$slider->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
-                                                  <a href="{{route('Rows.edit',$slider->id)}}" class="btn btn-primary btn-sm float-right">{{__('row.edit')}}</a>
-                                                  <a href="{{route('Rows.show',$slider->id)}}" class="btn btn-success">عرض الفصول</a>
+                                                  <a href="{{route('Rows.edit',$slider->id)}}" class="btn btn-primary btn-sm float-right"><i class="fa fa-edit">{{__('row.edit')}}</i></a>
                                                 </td>
                                                 </tr>
                                             @endforeach          
                                           </tbody>
                                   </table>
                                     @else
-                                    <div class="text-center"> NO Student</div>
+                                    <div class="text-center"> slider</div>
                                     @endif  
                               </div>    
                     </div>
@@ -38,67 +44,59 @@
      </div>
 
 
-<!-- 
-       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                           <ol class="carousel-indicators">
-                              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
-                              <div class="carousel-inner">
-                                    @foreach($sliders as $slider)
-                                      <div class="carousel-item active">
-                                        <img src="{{asset('/imgase/slider/'.$slider->name)}}" class="d-block w-100" alt="...">
-                                      </div>
-                             </div>
-                                    @endforeach
 
-                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
-       </div>  -->
 
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-       
-  <div class="carousel-inner">
-  @foreach($sliders as $slider)
-    <div class="carousel-item @if($loop->first)active @endif">
-    <img src="{{asset('/imgase/slider/'.$slider->name)}}" class="d-block w-100" alt="...">
+
+<!-- start carousel-->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 1px;">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner imags">
+    @foreach($sliders as $slider)
+
+      <div class="carousel-item @if($loop->first)active @endif">
+      <img src="{{asset('/imgase/slider/'.$slider->photo)}}" class="d-block w-100" alt="...">
+      
+        <div class="carousel-caption">
+            <h1 style="  text-shadow: 1px 1px #000; color: #0000;font-family: 'Kalam', cursive;">{{$slider->title}}</h1>
+           <p style="background: rgba(200, 200,200, 0.3);border-radius: 7px;"> {{$slider->details}}</p>
+        </div>
+
+      </div>
+   
+    
+      @endforeach
+
     </div>
- 
-    @endforeach
-    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<!--end carousel-->
 
 
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+
+
+
+
+
+
+
+
 
     @endsection
 
 
 
 
-
-
-
-
-
-
-@section('scripts')
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  @endsection
 

@@ -1,4 +1,6 @@
   @extends('dashboard.app')
+  @section('title','class')
+
   @section('content')
 
   <div class="container">

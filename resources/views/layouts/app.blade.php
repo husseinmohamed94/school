@@ -40,12 +40,12 @@
                     <ul class="navbar-nav mr-auto">
 
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-        <li>
-            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                {{ $properties['native'] }}
-            </a>
-        </li>
-    @endforeach
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
 
                     </ul>
 
