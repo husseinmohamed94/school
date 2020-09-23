@@ -26,7 +26,7 @@
                         
                               <tr>
                               <td>
-                              <a href="{{route('class.delete',$class->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
+                              <a href="{{route('class.delete',$class->id)}}" onclick="return confirm('{{__('slider.sure')}}')"  class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
                               <a href="{{route('class.edit',$class->id)}}" class="btn btn-primary btn-sm float-right">{{__('row.edit')}}</a>
                             </td>
                                   <td> {{$class->name}} </td>

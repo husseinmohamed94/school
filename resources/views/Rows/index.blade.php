@@ -23,7 +23,7 @@
                                                   <tr>
                                                       <td> {{$Row->name}} </td>                                
                                                     <td>
-                                                  <a href="{{route('Rows.delete',$Row->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
+                                                  <a href="{{route('Rows.delete',$Row->id)}}"  onclick="return confirm('{{__('slider.sure')}}')"class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
                                                   <a href="{{route('Rows.edit',$Row->id)}}" class="btn btn-primary btn-sm float-right">{{__('row.edit')}}</a>
                                                   <a href="{{route('Rows.show',$Row->id)}}" class="btn btn-success">عرض الفصول</a>
                                                 </td>

@@ -16,7 +16,10 @@ return [
    
     'title'                    =>'title',
     'details'                   => 'details',
-   
+    'Delete'                    =>'Delete',
+    'edit'                      =>'edit',
+    'sure'                      =>'Are you sure?',        
+
     
     
 

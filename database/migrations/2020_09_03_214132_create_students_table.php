@@ -24,8 +24,9 @@ class CreateStudentsTable extends Migration
           $table->string('Mothername_en');
           $table->string('Address_ar');
            $table->string('Address_en');
-           //$table->>enum('Gender',['Male','female'])->default('male');
-        $table->timestamps();
+           $table->enum('Gender', ['Male','female']);
+           $table->integer('row_id');
+           $table->timestamps();
         });
     }
 

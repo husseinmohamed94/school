@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('home');
+});*/
 
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/login/custom','LoginToController@login')->name('login.custom');   
@@ -57,6 +58,8 @@ Route::group(
            Route::get('edit/{student_id}','StudentController@edit')->name('student.edit');
            Route::post('update/{student_id}','StudentController@update')->name('studen.update');
            Route::get('delete/{student_id}','StudentController@delete')->name('studen.delete');
+           Route::get('/findclass/{id}','StudentController@findclass');
+
     });
 
         /**************** end route student */
@@ -96,7 +99,9 @@ Route::group(['prefix'=>'class'],function(){
             Route::get('/','SliderShowController@index')->name('slider.index'); 
            Route::get('create','SliderShowController@create')->name('slider.create');
            Route::post('store','SliderShowController@store')->name('slider.store');
-        
+           Route::get('edit/{slider_id}','SliderShowController@edit')->name('slider.edit');
+           Route::post('update/{slider_id}','SliderShowController@update')->name('slider.update');
+           Route::get('delete/{slider_id}','SliderShowController@delete')->name('slider.delete');        
         });
               
         /**************** start route class */
@@ -108,7 +113,11 @@ Route::group(['prefix'=>'class'],function(){
         
         });
    
-
+        Route::get('/ajex-class',function(){
+            $row_id = Input::get('row_id');
+            $classes = Row::where('row_id','=','row_id')->get();
+            return Response::json($classes);
+        });
 
 });
 

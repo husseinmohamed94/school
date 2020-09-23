@@ -26,6 +26,7 @@ return [
     'Delete'                => 'Delete',
     'edit'                  =>'edit',
     'Mothername'              =>'Mothername  ',
+    'Gender'                  =>'Gender'
 
     
 

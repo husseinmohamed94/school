@@ -78,32 +78,29 @@
       
     </div>
      
-    <!-- 
- <div class="col-md-6 mb-3">
-        <label for="validationDefault03">Address ar</label>
-        <input type="text" class="form-control" name="Address_ar" value="{{$student->Address_ar}}" >
-        @error('Address')
-      <div class="alert alert-danger">{{ $message }}</div>
-  @enderror
-      
-      <div>
-      <div class="col-md-6 mb-3">
-        <label for="validationDefault03">Address en</label>
-        <input type="text" class="form-control" name="Address_en"  value="{{$student->Address_en}}">
-        @error('Address')
-      <div class="alert alert-danger">{{ $message }}</div>
-  @enderror
-      </div>
-      
-      
-       <div class="form-check">
-      <label  for="">Gender: </label> 
-      <input type="radio" name="gender"  checked >
-      <label  for="">Male  </label> 
-      <input  type="radio" name="gender" >
-      <label  for="">female  </label> 
+    <div class="col-md-6">
+              <label for="validationDefault02"> {{__('student.row')}} </label>
+              <select name="row_id" id="row"  class="form-control rowclass">
+             @foreach($rows  as $row)
+             <option value="{{$row ->id}}" @if(isset($student->rows->id)) selected @endif>{{$row->name}}</option>
+            @endforeach
+             </select>
 
-      <div>-->
+              @error('student_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+          </div>
+
+
+          <div class="form-check col-md-12">
+                          <label  for="Gender">Gender: </label> 
+                         
+                          <input type="radio" name="Gender"    value="Male" >
+                          <label  for="">Male  </label> 
+                          <input  type="radio" name="Gender" value="female">
+                          <label  for="">female  </label>        
+
+                </div>
 
       <button class="btn btn-primary" type="submit">save</button>
 

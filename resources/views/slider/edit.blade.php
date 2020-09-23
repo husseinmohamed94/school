@@ -3,67 +3,52 @@
 
   @section('content')
 
-  <div class="container">
-  <form  action="{{route('Rows.update',$row->id)}}" method="POSt">
-  @csrf
-    <div class="form-row">
+  <div class="container text-center">
+        <form  action="{{route('slider.update',$slider->id)}}" method="POSt" enctype="multipart/form-data">
+         @csrf
+                        @if(Session::has('success'))
+                                <div class="alert alert-warning alert-success fade show text-center"  role="alert">
+                                <strong> {{Session::get('success')}}</strong>   
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                        @endif
+                <div class="row">
+        
+                         <div class="col-sm-12 ">
+                                <label > حمل صوره </label>
 
-      <div class="col-md-6 mb-3">
-            <label for="validationDefault01">{{__('row.name_ar')}}</label>
-            <input type="text" name="name_ar" class="form-control" value="{{$row->name_ar}}" >
-            @error('name')
-          <div class="alert alert-danger">{{ $message }}</div>
-          @enderror
-      </div>
-      
-     
-      <div class="col-md-6 mb-3">
-        <label for="validationDefault01"> {{__('row.name_en')}}</label>
-        <input type="text" name="name_en" class="form-control"  value="{{$row->name_en}}">
-        @error('name')
-      <div class="alert alert-danger">{{ $message }}</div>
-  @enderror
-      </div>
-    
+                                <input type="file" class="form-control-file" name="photo">
+                                                @error('photo')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                        </div>
+                         <div class="col-sm-12">
+                                <label > عنوان </label>
+                                <input type="text" name="title" class="form-control" value="{{$slider->title}}" >
+                                @error('title')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                        </div>
 
-    <!-- 
- <div class="col-md-6 mb-3">
-        <label for="validationDefault03">Address ar</label>
-        <input type="text" class="form-control" name="Address_ar"  >
-        @error('Address')
-      <div class="alert alert-danger">{{ $message }}</div>
-  @enderror
-      
-      <div>
-      <div class="col-md-6 mb-3">
-        <label for="validationDefault03">Address en</label>
-        <input type="text" class="form-control" name="Address_en" >
-        @error('Address')
-      <div class="alert alert-danger">{{ $message }}</div>
-  @enderror
-      </div>
-      
-      
-       <div class="form-check">
-      <label  for="">Gender: </label> 
-      <input type="radio" name="gender"  checked >
-      <label  for="">Male  </label> 
-      <input  type="radio" name="gender" >
-      <label  for="">female  </label> 
+                        <div class="col-sm-12">
+                                <label > التفاصيل </label><br>
 
-      <div>-->
+                         <textarea name="details" id=""   cols="100" rows="20">{{$slider->details}}</textarea>
+                                @error('details')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                        </div>
+                                  <button class="btn btn-primary btn-block" type="submit">{{__('row.save')}}</button>
 
-      <button class="btn btn-primary" type="submit">save</button>
+                 </div>
 
-      </div>
-  </form>
+        </form>
 
-   
+        
 
-   
-
-
-    
-  </div>
+        
+ </div>
 
   @endsection

@@ -3,8 +3,12 @@
 
 @section('content')
     <div class="container-fluid"> 
+
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-10">
+                <div class="clearfix ">
+        <a href="{{route('teacher.create')}}" class="btn btn-success float-right">Add studen</a>
+        </div>
                 @if(Session::has('success'))
                            <div class="alert alert-warning alert-success fade show text-center"  role="alert">
                               <strong> {{Session::get('success')}}</strong>   
@@ -48,7 +52,7 @@
                               <td>{{$teacher->GraduationYear}}</td>
                               <td>{{$teacher->Gender}}</td>
                               <td>
-                              <a href="{{route('studen.delete',$teacher->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                              <a href="{{route('studen.delete',$teacher->id)}}" onclick="return confirm('{{__('slider.sure')}}')" class="btn btn-success"><i class="fa fa-edit"></i></a>
                               <a href="{{route('studen.delete',$teacher->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a>
                               </td>
 

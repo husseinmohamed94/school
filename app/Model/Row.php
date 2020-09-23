@@ -17,4 +17,12 @@ class Row extends Model
    return $this->hasMany('App\Model\Classes','row_id','id');
   }
 
+
+
+public function students(){
+  return $this->hasMany('App\Model\Student','row_id','id');
+}
+
+
+
 }

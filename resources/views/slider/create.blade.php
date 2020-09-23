@@ -26,7 +26,7 @@
                         </div>
                          <div class="col-sm-12">
                                 <label > عنوان </label>
-                                <input type="text" name="title" class="form-control" value="{{old('name_ar')}}" >
+                                <input type="text" name="title" class="form-control" value="{{old('title')}}" >
                                 @error('title')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -35,7 +35,7 @@
                         <div class="col-sm-12">
                                 <label > التفاصيل </label><br>
 
-                         <textarea name="details" id="" cols="100" rows="20"></textarea>
+                         <textarea name="details" id="" value="{{old('details')}}" cols="100" rows="20"></textarea>
                                 @error('details')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

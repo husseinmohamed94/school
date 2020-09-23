@@ -28,8 +28,8 @@
                                                       <td> {{$slider->details}}</td>                                
 
                                                       <td>
-                                                  <a href="{{route('Rows.delete',$slider->id)}}" class="btn btn-primary btn-sm ml-2 float-right">{{__('row.Delete')}}</a>
-                                                  <a href="{{route('Rows.edit',$slider->id)}}" class="btn btn-primary btn-sm float-right"><i class="fa fa-edit">{{__('row.edit')}}</i></a>
+                                                  <a href="{{route('slider.delete',$slider->id)}}"  onclick="return confirm('{{__('slider.sure')}}')" class="btn btn-primary btn-sm ml-2 float-right ">{{__('slider.Delete')}}</a>
+                                                  <a href="{{route('slider.edit',$slider->id)}}" class="btn btn-primary btn-sm float-right "><i class="fa fa-edit">{{__('slider.edit')}}</i></a>
                                                 </td>
                                                 </tr>
                                             @endforeach          

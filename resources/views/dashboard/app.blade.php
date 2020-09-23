@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 
@@ -165,13 +166,55 @@
                     </p>
                   </a>
           </li>
-          <li class="nav-item">
-              <a href="{{route('student.index')}}" class="nav-link"  > <i class="nav-icon fa fa-th"></i>
-                <p>
-                {{__('student.student')}}
-                </p>
-              </a>
+         
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+              {{__('student.student')}}
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('student.index')}}" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>  {{__('student.student')}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>تسكين الطلاب </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>تقيم الطلاب</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>طلبات اللالتحاق</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/modals.html" class="nav-link">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Modals & Alerts</p>
+                </a>
+              </li>
+            
+             
+            </ul>
           </li>
+
+
+
+
           <li class="nav-item">
               <a href="{{route('class.index')}}" class="nav-link"> 
               
